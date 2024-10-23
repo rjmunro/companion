@@ -191,7 +191,6 @@ export class TriggersEventTimer {
 	getTimeOfDayDescription(event: EventInstance): string {
 		let day_str = 'Unknown'
 		if (event.options.days) {
-			// @ts-ignore
 			const days = [...event.options.days].sort()
 			const days_tmp = days.toString()
 
@@ -270,7 +269,6 @@ export class TriggersEventTimer {
 			const now = res
 
 			let start = new Date(now.getFullYear(), 0, 0)
-			// @ts-ignore
 			let diff = now - start + (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000
 			let oneDay = 1000 * 60 * 60 * 24
 			let day = Math.floor(diff / oneDay)

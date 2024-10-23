@@ -26,7 +26,6 @@ import { getStreamDeckDeviceInfo } from '@elgato-stream-deck/node'
 import { getBlackmagicControllerDeviceInfo } from '@blackmagic-controller/node'
 import { usb } from 'usb'
 import shuttleControlUSB from 'shuttle-control-usb'
-// @ts-ignore
 import vecFootpedal from 'vec-footpedal'
 import { listLoupedecks, LoupedeckModelId } from '@loupedeck/node'
 import { SurfaceHandler, getSurfaceName } from './Handler.js'

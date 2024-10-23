@@ -125,9 +125,7 @@ export class DataUserConfig extends CoreBase {
 		let save = false
 		// copy default values. this will set newly added defaults too
 		for (let k in DataUserConfig.Defaults) {
-			// @ts-ignore
 			if (this.#data[k] === undefined) {
-				// @ts-ignore
 				this.#data[k] = DataUserConfig.Defaults[k]
 				save = true
 			}
@@ -179,7 +177,6 @@ export class DataUserConfig extends CoreBase {
 			// check if these fields have already been defined
 			let has_been_defined = false
 			for (const k in legacy_config) {
-				// @ts-ignore
 				if (this.#data[k] !== undefined) {
 					has_been_defined = true
 					break
@@ -190,9 +187,7 @@ export class DataUserConfig extends CoreBase {
 			if (!has_been_defined) {
 				this.logger.info('Running one-time userconfig v2 upgrade')
 				for (let k in legacy_config) {
-					// @ts-ignore
 					if (this.#data[k] === undefined) {
-						// @ts-ignore
 						this.#data[k] = legacy_config[k]
 					}
 				}
@@ -351,7 +346,6 @@ export class DataUserConfig extends CoreBase {
 			checkControlsInBounds = true
 		}
 
-		// @ts-ignore
 		this.#data[key] = value
 		if (save) {
 			this.db.setKey('userconfig', this.#data)
@@ -384,7 +378,6 @@ export class DataUserConfig extends CoreBase {
 	setKeys(objects: Record<string, any>): void {
 		if (objects !== undefined) {
 			for (let key in objects) {
-				// @ts-ignore
 				this.setKey(key, objects[key], false)
 			}
 

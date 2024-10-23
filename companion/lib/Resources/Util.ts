@@ -23,13 +23,9 @@ export function argb(
 	b: number | string,
 	base = 10
 ): number | false {
-	// @ts-ignore
 	a = parseInt(a, base)
-	// @ts-ignore
 	r = parseInt(r, base)
-	// @ts-ignore
 	g = parseInt(g, base)
-	// @ts-ignore
 	b = parseInt(b, base)
 
 	const rgbVal = rgb(r, g, b)
@@ -59,11 +55,8 @@ export const decimalToRgb = (decimal: number): { red: number; green: number; blu
  * @param base
  */
 export const rgb = (r: number | string, g: number | string, b: number | string, base = 10): number | false => {
-	// @ts-ignore
 	r = parseInt(r, base)
-	// @ts-ignore
 	g = parseInt(g, base)
-	// @ts-ignore
 	b = parseInt(b, base)
 
 	if (isNaN(r) || isNaN(g) || isNaN(b)) return false
@@ -432,6 +425,5 @@ export function ParseAlignment(
 export function serializeIsVisibleFnSingle<T extends CompanionInputFieldBase | CompanionInputFieldBaseExtended>(
 	field: T
 ): EncodeIsVisible2<T> {
-	// @ts-ignore
 	return serializeIsVisibleFn([field])[0]
 }

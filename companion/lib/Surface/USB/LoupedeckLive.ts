@@ -252,7 +252,6 @@ export class SurfaceUSBLoupedeckLive extends EventEmitter<SurfacePanelEvents> im
 			}
 		})
 
-		// @ts-ignore
 		this.#loupedeck.on('disconnect', (error) => {
 			this.#logger.error(`disconnected: ${error}`)
 			this.emit('remove')

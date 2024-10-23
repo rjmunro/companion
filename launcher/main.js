@@ -793,7 +793,6 @@ if (!lock) {
 			})
 
 			child = new RespawnMonitor(
-				// @ts-ignore
 				() =>
 					[
 						// Build a new command string for each start

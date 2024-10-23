@@ -68,7 +68,6 @@ export class ServiceOscSender extends ServiceOscBase {
 		if (this.server !== undefined && bundle !== undefined) {
 			this.server.send(
 				{
-					// @ts-ignore
 					timeTag: OSC.timeTag(time),
 					packets: bundle,
 				},

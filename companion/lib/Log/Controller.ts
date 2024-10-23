@@ -99,7 +99,6 @@ class LogController {
 				level: 'silly',
 				transports: [
 					new winston.transports.Console({
-						// @ts-ignore
 						format: winston.format.simple(),
 					}),
 				],
@@ -121,7 +120,6 @@ class LogController {
 				level: 'info',
 				transports: [
 					new winston.transports.Console({
-						// @ts-ignore
 						format: winston.format.combine(...consoleFormat),
 					}),
 					new ToMemoryTransport(
@@ -226,7 +224,6 @@ class LogController {
 		if (typeof this.#addBreadcrumb === 'function') {
 			this.#addBreadcrumb({
 				category: 'source',
-				// @ts-ignore
 				level: SentrySeverity[line.level] || SentrySeverity.debug,
 				message: `${line.source}: ${line.message}`,
 			})
@@ -300,7 +297,6 @@ class LogController {
 // Get this thing started right away!
 // This shouldn't happen here, but some sequencing things with the imports means it does for now
 const logger = new LogController()
-// @ts-ignore
 global.logger = logger
 
 export default logger

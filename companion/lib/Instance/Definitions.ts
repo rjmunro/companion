@@ -241,7 +241,6 @@ export class InstanceDefinitions {
 			}
 
 			for (const opt of definition.options) {
-				// @ts-ignore
 				event.options[opt.id] = cloneDeep(opt.default)
 			}
 

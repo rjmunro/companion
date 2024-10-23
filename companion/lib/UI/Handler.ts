@@ -137,7 +137,6 @@ export class UIHandler extends EventEmitter<UIHandlerEvents> {
 			maxHttpBufferSize: 500 * 1000 * 1000, // bytes. socket.io v2 used 100mb. while not entirely safe, it is needed by some for their large image heavy setups #3033
 			cors: {
 				// Allow everything
-				// @ts-ignore
 				origin: (o, cb) => cb(null, o),
 				credentials: true,
 			},

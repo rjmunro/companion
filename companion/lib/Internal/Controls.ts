@@ -540,7 +540,6 @@ export class InternalControls implements InternalModuleFragment {
 					const newStyle: Record<string, any> = {}
 
 					for (const prop of feedback.options.properties) {
-						// @ts-ignore
 						newStyle[prop] = render.style[prop]
 					}
 

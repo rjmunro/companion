@@ -1,5 +1,4 @@
 import { ServiceBase } from './Base.js'
-// @ts-ignore
 import VideohubServer from 'videohub-server'
 import type { SurfaceIPVideohubPanel } from '../Surface/IP/VideohubPanel.js'
 import type { Registry } from '../Registry.js'

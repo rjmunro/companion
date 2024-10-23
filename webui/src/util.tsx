@@ -131,7 +131,6 @@ const freezePrototypes = () => {
 	Object.freeze(console)
 	Object.freeze(Array.prototype)
 	Object.freeze(Function.prototype)
-	// @ts-ignore
 	Object.freeze(Math.prototype)
 	Object.freeze(Number.prototype)
 	Object.freeze(Object.prototype)
@@ -140,15 +139,10 @@ const freezePrototypes = () => {
 	Object.freeze(Symbol.prototype)
 
 	// prevent constructors of async/generator functions to bypass sandbox
-	// @ts-ignore
 	Object.freeze(async function () {}.__proto__)
-	// @ts-ignore
 	Object.freeze(async function* () {}.__proto__)
-	// @ts-ignore
 	Object.freeze(function* () {}.__proto__)
-	// @ts-ignore
 	Object.freeze(function* () {}.__proto__.prototype)
-	// @ts-ignore
 	Object.freeze(async function* () {}.__proto__.prototype)
 }
 

@@ -63,7 +63,6 @@ export class SurfaceUSBInfinitton extends EventEmitter<SurfacePanelEvents> imple
 
 			this.#infinitton = new Infinitton(devicePath)
 
-			// @ts-ignore
 			const serialNumber = this.#infinitton.device.getDeviceInfo().serialNumber
 
 			this.info = {

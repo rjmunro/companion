@@ -493,7 +493,6 @@ export class ControlTrigger
 	optionsSetField(key: string, value: number, forceSet?: boolean): boolean {
 		if (!forceSet && key === 'sortOrder') throw new Error('sortOrder cannot be set by the client')
 
-		// @ts-ignore
 		this.options[key] = value
 
 		if (key === 'enabled') {

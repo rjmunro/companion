@@ -229,7 +229,6 @@ export class InternalSurface implements InternalModuleFragment {
 
 		if (extras.location) {
 			if (thePageNumber === 0 || thePageNumber === '0')
-				// @ts-ignore
 				thePageNumber = extras.location.pageNumber ?? extras.location.page
 		}
 

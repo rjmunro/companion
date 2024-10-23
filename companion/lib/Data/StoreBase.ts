@@ -205,10 +205,8 @@ export abstract class DataStoreBase {
 				if (rows.length > 0) {
 					for (const record of Object.values(rows)) {
 						try {
-							/** @ts-ignore */
 							out[record.id] = JSON.parse(record.value)
 						} catch (e) {
-							/** @ts-ignore */
 							out[record.id] = record.value
 						}
 					}
@@ -246,13 +244,10 @@ export abstract class DataStoreBase {
 
 			try {
 				const row = query.get({ id: key })
-				/** @ts-ignore */
 				if (row && row.value) {
 					try {
-						/** @ts-ignore */
 						out = JSON.parse(row.value)
 					} catch (e) {
-						/** @ts-ignore */
 						out = row.value
 					}
 				} else {

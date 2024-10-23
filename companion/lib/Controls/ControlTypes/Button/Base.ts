@@ -246,7 +246,6 @@ export abstract class ButtonControlBase<TJson, TOptions extends Record<string, a
 	 * Update an option field of this control
 	 */
 	optionsSetField(key: string, value: any): boolean {
-		// @ts-ignore
 		this.options[key] = value
 
 		this.commitChange()

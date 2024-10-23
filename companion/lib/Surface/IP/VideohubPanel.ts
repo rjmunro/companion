@@ -17,7 +17,6 @@
 import LogController from '../../Log/Controller.js'
 import { EventEmitter } from 'events'
 import { convertPanelIndexToXY } from '../Util.js'
-// @ts-ignore
 import VideohubServer from 'videohub-server'
 import {
 	OffsetConfigFields,

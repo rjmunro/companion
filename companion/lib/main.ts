@@ -102,7 +102,6 @@ program.command('start', { isDefault: true, hidden: true }).action(() => {
 	let configDir = options.configDir
 	if (!configDir) {
 		// Check the old location first
-		// @ts-ignore
 		configDir = path.join(process.env[process.platform == 'win32' ? 'USERPROFILE' : 'HOME'], 'companion')
 		if (!fs.pathExistsSync(configDir)) {
 			// Creating a new folder, so use the proper place

@@ -20,7 +20,6 @@ import path from 'path'
 import { isPackaged } from '../Resources/Util.js'
 import cors from 'cors'
 import fs from 'fs'
-// @ts-ignore
 import serveZip from 'express-serve-zip'
 import { fileURLToPath } from 'url'
 

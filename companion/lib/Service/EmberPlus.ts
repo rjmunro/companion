@@ -577,7 +577,6 @@ export class ServiceEmberPlus extends ServiceBase {
 		const node = this.#server.getElementByPath(path)
 		if (!node) return
 
-		// @ts-ignore
 		if (node.contents.value !== newValue) {
 			this.#server.update(node, { value: newValue })
 		}
