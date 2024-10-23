@@ -41,8 +41,7 @@ export function FindAllReferencedVariables(node: jsep.Expression): string[] {
 		if (node.type === 'CompanionVariable') {
 			if (node.name === undefined) throw new Error('Missing variable identifier')
 
-			// @ts-ignore
-			referencedVariables.push(node.name)
+			referencedVariables.push(node.name as string)
 		}
 	})
 
@@ -133,10 +132,8 @@ function visitElements(node: jsep.Expression, visitor: (node: jsep.Expression) =
 		default:
 			switch (node.type) {
 				case 'Property':
-					// @ts-ignore
-					visitElements(node.key, visitor)
-					// @ts-ignore
-					visitElements(node.value, visitor)
+					visitElements(node.key as jsep.Expression, visitor)
+					visitElements(node.value as jsep.Expression, visitor)
 
 					break
 
@@ -148,10 +145,9 @@ function visitElements(node: jsep.Expression, visitor: (node: jsep.Expression) =
 
 function fixReturnDetectedAsFunction(node: SomeExpressionNode): void {
 	if (node.type === 'CallExpression' && node.callee.name === 'return' && node.arguments.length === 1) {
-		const returnNode = node as any as ReturnExpression
+		const returnNode = node as any
 		returnNode.type = 'ReturnStatement'
 
-		// @ts-ignore
 		returnNode.argument = returnNode.arguments[0]
 
 		delete returnNode.arguments
